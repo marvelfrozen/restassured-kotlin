@@ -1,6 +1,9 @@
 package resreq.users
 
 import io.restassured.RestAssured
+import io.restassured.filter.log.ErrorLoggingFilter
+import io.restassured.filter.log.RequestLoggingFilter
+import io.restassured.filter.log.ResponseLoggingFilter
 import io.restassured.path.json.JsonPath
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
@@ -10,6 +13,7 @@ import resreq.Users
 class TestGetUsersList {
     init {
         RestAssured.baseURI = "https://reqres.in/"
+        RestAssured.filters(RequestLoggingFilter(), ResponseLoggingFilter(), ErrorLoggingFilter())
     }
 
     @Test
