@@ -15,4 +15,9 @@ dependencies {
 tasks.withType(Test::class) {
     ignoreFailures = true
     useJUnitPlatform {}
+
+    testLogging {
+        events("passed", "skipped", "failed")
+        showStandardStreams = true
+    }
 }
