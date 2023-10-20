@@ -9,8 +9,9 @@ This project provides a REST Assured testing written in Kotlin to perform functi
 1. [Getting Started](#getting-started)
     - [Installation](#installation)
     - [Quick Start](#quick-start)
-2. [Acknowledgement](#acknowledgment)
-3. [Contact](#contact)
+2. [Example Test Flows](#example-test-flows)
+3. [Acknowledgement](#acknowledgment)
+4. [Contact](#contact)
 
 ## Getting Started
 
@@ -38,6 +39,27 @@ To run this project, you will need the following tools:
     ```
 
 4. The test results will be generated in the `build/reports/tests/test` folder.
+
+## Example Test Flows
+
+This section describes the ReqRes Get Users List flows included in this project. The test consists of module class in `src/main/kotlin/resreq` and test class in `src/test/kotlin/resreq/users`.
+
+### Module Class
+
+Check the module class and function `resreq.Users.getUsersList`. 
+
+A module class is used here so we can reuse the api call more easily rather than construct it in the test class every time we want to call it.
+
+### Test Class
+
+Test class can be found here `resreq.users.TestGetUsersList`
+
+This test class demonstrates on how to use the module class to call the api.
+
+- **Scenario:** Check Get Users List
+- **Steps:**
+   1. Call get users list api with parameter `page=2` 
+   2. Assert the response body json
 
 ## Acknowledgment
 
